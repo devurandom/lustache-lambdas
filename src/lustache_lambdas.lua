@@ -14,6 +14,13 @@ local function strip_trailing_comma(text, render)
   return text
 end
 
+local function json_string_escape(text, render)
+  local text = render(text)
+
+  return text:gsub("\\", "\\\\"):gsub("\t", "\\t"):gsub("\n", "\\n"):gsub("\"", "\\\"")
+end
+
 return {
   strip_trailing_comma = strip_trailing_comma,
+  json_string_escape = json_string_escape,
 }
