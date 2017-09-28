@@ -28,9 +28,9 @@ local function indent_by_two_spaces(text, render)
 
   local lines = {}
   for line, newline in gmatch(text, "([^\n]+)(\n?)") do
-    tinsert(lines, "  " .. line)
+    tinsert(lines, "  " .. line .. newline)
   end
-  return tconcat(lines, "\n")
+  return tconcat(lines, "")
 end
 
 return {
