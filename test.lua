@@ -28,6 +28,13 @@ local template = [[
 ---
 {{#indent}}{{#indent}}Text1
 Text2{{/indent}}{{/indent}}
+Text3
+---
+{{#indent}}{{#indent}}
+Text1
+Text2
+{{/indent}}{{/indent}}
+Text3
 ---
 ]]
 
