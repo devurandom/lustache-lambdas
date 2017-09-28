@@ -1,5 +1,8 @@
 local sub = require "string".sub
 local match = require "string".match
+local gmatch = require "string".gmatch
+local tinsert = require "table".insert
+local tconcat = require "table".concat
 
 local function strip_trailing_comma(text, render)
   local text = render(text)
@@ -20,7 +23,18 @@ local function json_string_escape(text, render)
   return text:gsub("\\", "\\\\"):gsub("\t", "\\t"):gsub("\n", "\\n"):gsub("\"", "\\\"")
 end
 
+local function indent_by_two_spaces(text, render)
+  local text = render(text)
+
+  local lines = {}
+  for line, newline in gmatch(text, "([^\n]+)(\n?)") do
+    tinsert(lines, "  " .. line)
+  end
+  return tconcat(lines, "\n")
+end
+
 return {
   strip_trailing_comma = strip_trailing_comma,
   json_string_escape = json_string_escape,
+  indent_by_two_spaces = indent_by_two_spaces,
 }
