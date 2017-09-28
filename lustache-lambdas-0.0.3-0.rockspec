@@ -1,8 +1,8 @@
 package = "lustache-lambdas"
-version = "0.0.2-0"
+version = "0.0.3-0"
 source = {
-  url = "https://github.com/urzds/lustache-lambdas/archive/v0.0.2-0.tar.gz",
-  dir = "lustache-lambdas-0.0.2-0"
+  url = "https://github.com/urzds/lustache-lambdas/archive/v0.0.3-0.tar.gz",
+  dir = "lustache-lambdas-0.0.3-0"
 }
 description = {
   summary = "Useful lambdas for {{lustache}}",
